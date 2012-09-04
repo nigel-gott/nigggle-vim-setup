@@ -85,10 +85,14 @@ alias l='ls -CF'
 
 alias uni='ssh ndg10@shell3.doc.ic.ac.uk'
 alias threads='cd /home/nigel/uni/os/pintos-ic/src/threads'
+alias timefeed='cd /home/nigel/code/django/timefeed'
 alias userprogs='cd /home/nigel/uni/os/pintos-ic/src/userprog'
 alias eclimd='./home/nigel/.eclipse/org.eclipse.platform_3.7.0_155965261/eclimd'
 
 alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc'
+
+alias initpy='touch __init__.py'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
