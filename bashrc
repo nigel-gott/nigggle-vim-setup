@@ -91,8 +91,8 @@ alias eclimd='./home/nigel/.eclipse/org.eclipse.platform_3.7.0_155965261/eclimd'
 
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
-alias vpy='~/code/django/timefeed_repo/venv/bin/python'
-alias vpip='~/code/django/timefeed_repo/venv/bin/pip'
+
+alias py='python'
 
 alias initpy='touch __init__.py'
 
