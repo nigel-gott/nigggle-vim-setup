@@ -78,6 +78,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# Activate timefeeds venv
+
+. /home/nigel/code/django/timefeed_repo/venv/bin/activate
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
