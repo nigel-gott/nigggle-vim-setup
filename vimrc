@@ -32,8 +32,8 @@ Bundle 'majutsushi/tagbar'
 filetype plugin indent on  
 
 " Setup files we don't want to see in CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc 
-let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db
+let g:ctrlp_custom_ignore = '__init__.py$\|\v[\/](venv|\.git|\.hg|\.svn)$'
 
 " Make <c-p> actually open CtrlP
 let g:ctrlp_map = '<c-p>'
