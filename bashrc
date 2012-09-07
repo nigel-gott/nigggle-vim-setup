@@ -78,10 +78,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Activate timefeeds venv
-
-. /home/nigel/code/django/timefeed_repo/venv/bin/activate
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -89,7 +85,7 @@ alias l='ls -CF'
 
 alias uni='ssh ndg10@shell3.doc.ic.ac.uk'
 alias threads='cd /home/nigel/uni/os/pintos-ic/src/threads'
-alias timefeed='cd /home/nigel/code/django/timefeed_repo'
+alias timefeed='. /home/nigel/code/django/timefeed_repo/go_timefeed.sh'
 alias userprogs='cd /home/nigel/uni/os/pintos-ic/src/userprog'
 alias eclimd='./home/nigel/.eclipse/org.eclipse.platform_3.7.0_155965261/eclimd'
 
