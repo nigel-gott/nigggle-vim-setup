@@ -2,6 +2,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Need to turn off filetype to load Vundle.
 filetype off
 
 " c-tab does not work with gnome terminal, change to c-f before loading UltiSnips
@@ -28,6 +29,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 
 Bundle 'majutsushi/tagbar'
+
+Bundle 'chreekat/vim-paren-crosshairs'
 
 filetype plugin indent on  
 
