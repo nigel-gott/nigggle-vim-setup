@@ -83,7 +83,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias uni='ssh ndg10@shell3.doc.ic.ac.uk'
+alias uni='ssh ndg10@shell2.doc.ic.ac.uk'
 alias threads='cd /home/nigel/uni/os/pintos-ic/src/threads'
 alias timefeed='. /home/nigel/code/django/timefeed_repo/go_timefeed.sh'
 alias userprogs='cd /home/nigel/uni/os/pintos-ic/src/userprog'

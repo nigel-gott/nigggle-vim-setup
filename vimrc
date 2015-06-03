@@ -4,6 +4,7 @@
 
 " Vundle {
     " Need to turn off filetype to load Vundle.
+    set nocompatible
     filetype off
 
     " c-tab does not work with gnome terminal, change to c-f before loading UltiSnips
@@ -13,31 +14,24 @@
     let g:tagbar_usearrows = 1
     nnoremap <c-t> :TagbarToggle<CR>
 
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
 
     " Bundles {
         " let Vundle manage Vundle
-        Bundle 'gmarik/vundle'
-        " Useful for :GBlame, :GDiff and others
-        Bundle 'tpope/vim-fugitive'
-        " Snippets
-        Bundle 'SirVer/ultisnips'
-        " Syntax checker using pylint etc. 
-        Bundle 'scrooloose/syntastic'
+        Plugin 'gmarik/Vundle.vim'
         " Easy path finder
-        Bundle 'kien/ctrlp.vim'
+        Plugin 'kien/ctrlp.vim'
 
-        Bundle 'ervandew/supertab'
-
-        Bundle 'majutsushi/tagbar'
+        Plugin 'ervandew/supertab'
 
         " Whilst inside parens shows a crosshair to the cursor
-        Bundle 'chreekat/vim-paren-crosshairs'
+        Plugin 'chreekat/vim-paren-crosshairs'
     " }
 
     " Renable after loading Vundle
     " Also automatically detects file types
+    call vundle#end()
     filetype plugin indent on  
 
     " Ctrl-P {
