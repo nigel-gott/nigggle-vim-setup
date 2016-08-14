@@ -143,11 +143,3 @@
     set noswapfile
 " }
 
-" Solarized {
-    " Setup solarized.
-    syntax enable
-    set background=dark
-    set t_Co=16
-    let g:solarized_termcolors=16
-    colorscheme solarized
-" }
