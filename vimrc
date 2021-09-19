@@ -1,145 +1,173 @@
-" Notes {
-"    
-" }
 
-" Vundle {
-    " Need to turn off filetype to load Vundle.
-    set nocompatible
-    filetype off
+" Vundle
+" Need to turn off filetype to load Vundle.
+set nocompatible
+filetype off
 
-    " c-tab does not work with gnome terminal, change to c-f before loading UltiSnips
-    let g:UltiSnipsListSnippets = "<c-f>"
+" c-tab does not work with gnome terminal, change to c-f before loading UltiSnips
+let g:UltiSnipsListSnippets = "<c-f>"
 
-    " Configure tagbar
-    let g:tagbar_usearrows = 1
-    nnoremap <c-t> :TagbarToggle<CR>
+" Configure tagbar
+let g:tagbar_usearrows = 1
+nnoremap <c-t> :TagbarToggle<CR>
 
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-    " Bundles {
-        " let Vundle manage Vundle
-        Plugin 'gmarik/Vundle.vim'
-        " Easy path finder
-        Plugin 'kien/ctrlp.vim'
+" Bundles
+" let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
+" Easy path finder
+Plugin 'kien/ctrlp.vim'
 
-        Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
-        " Whilst inside parens shows a crosshair to the cursor
-        Plugin 'chreekat/vim-paren-crosshairs'
-    " }
+" Whilst inside parens shows a crosshair to the cursor
+Plugin 'chreekat/vim-paren-crosshairs'
 
-    " Renable after loading Vundle
-    " Also automatically detects file types
-    call vundle#end()
-    filetype plugin indent on  
+Plugin 'Valloric/YouCompleteMe'
 
-    " Ctrl-P {
-        " Setup files we don't want to see in CtrlP
-        set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db
-        let g:ctrlp_custom_ignore = 'coverage\|__init__.py$\|\v[\/](venv|\.git|\.hg|\.svn)$'
+Plugin 'Chiel92/vim-autoformat'
 
-        " Make <c-p> actually open CtrlP
-        let g:ctrlp_map = '<c-p>'
-        " Used mixed so we can see most recently used files.
-        let g:ctrlp_cmd = 'CtrlPMixed'
-    " }
-" }
+Plugin 'vim-syntastic/syntastic'
+
+Plugin 'nvie/vim-flake8'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 
-" General {
-    " Improve window navigation by allow use of Ctrl+hjkl
-    nnoremap <C-h> <C-w>h
-    nnoremap <C-j> <C-w>j
-    nnoremap <C-k> <C-w>k
-    nnoremap <C-l> <C-w>l
+" Renable after loading Vundle
+" Also automatically detects file types
+call vundle#end()
+filetype plugin indent on
 
-    " Vim not Vi 
-    set nocompatible               
+" Ctrl-P
+" Setup files we don't want to see in CtrlP
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db
+let g:ctrlp_custom_ignore = 'coverage\|__init__.py$\|\v[\/](venv|\.git|\.hg|\.svn)$'
 
-    " Sets how many lines of history VIM has to remember
-    set history=700
+" Make <c-p> actually open CtrlP
+let g:ctrlp_map = '<c-p>'
+" Used mixed so we can see most recently used files.
+let g:ctrlp_cmd = 'CtrlPMixed'
 
-    " Fix backspace
-    set backspace=indent,eol,start
 
-    " Set to auto read when a file is changed from the outside
-    set autoread
+" General
+" Improve window navigation by allow use of Ctrl+hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-    " Always show current position
-    set ruler 
-    " Allow movement keys to wrap from line to line in all modes
-    set whichwrap+=<,>,h,l,[,]
+" Vim not Vi
+set nocompatible
 
-    " Show how long things are in the bottom right corner
-    set showcmd
+" Sets how many lines of history VIM has to remember
+set history=700
 
-    " Turn on folding with special characters which flag the folds 
-    set foldmethod=marker
+" Fix backspace
+set backspace=indent,eol,start
 
-    " Indent according to the previous line
-    set autoindent
+" Set to auto read when a file is changed from the outside
+set autoread
 
-    " Tabs are just spaces, 4 wide
-    set smarttab
-    set shiftwidth=4
-    set tabstop=4
-    set expandtab
+" Always show current position
+set ruler
+" Allow movement keys to wrap from line to line in all modes
+set whichwrap+=<,>,h,l,[,]
 
-    "Wrap lines
-    set wrap 
+" Show how long things are in the bottom right corner
+set showcmd
 
-    " Cool tab completion stuff
-    set wildmenu
-    set wildmode=list:longest,full
+" Turn on folding with special characters which flag the folds
+set foldmethod=marker
 
-    " Make backspace work over line breaks etc.
-    set backspace=2
+" Indent according to the previous line
+set autoindent
 
-    " Enable line numbers
-    set number
+" Tabs are just spaces, 4 wide
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set expandtab
 
-    " If search contains an uppercase character then will be case sensitive, otherwise not case sensitive.
-    set ignorecase
-    set smartcase
+"Wrap lines
+set wrap
 
-    " Start searching with the very first entered character
-    set incsearch
+" Cool tab completion stuff
+set wildmenu
+set wildmode=list:longest,full
 
-    " Highlight things that we find with the search
-    set hlsearch
+" Make backspace work over line breaks etc.
+set backspace=2
 
-    " Ctrl-Y unhighlights everything!
-    nmap <silent> <C-Y> :silent noh<CR>
+" Enable line numbers
+set number
 
-    " When I close a tab, remove the buffer
-    set nohidden
+" If search contains an uppercase character then will be case sensitive, otherwise not case sensitive.
+set ignorecase
+set smartcase
 
-    " Set off the other paren
-    highlight MatchParen ctermbg=4
+" Start searching with the very first entered character
+set incsearch
 
-    " Space will toggle folds!
-    nnoremap <space> za
+" Highlight things that we find with the search
+set hlsearch
 
-    " Search mappings: These will make it so that going to the next one in a
-    " search will center on the line it's found in.
-    map N Nzz
-    map n nzz
+" Ctrl-Y unhighlights everything!
+nmap <silent> <C-Y> :silent noh<CR>
 
-    " Make vim silent by disabling annoying error noises.
-    set noerrorbells
-    set novisualbell
-    set t_vb=
+" When I close a tab, remove the buffer
+set nohidden
 
-    if version >= 700
-        set spl=en spell
-        set nospell
-    endif
+" Set off the other paren
+highlight MatchParen ctermbg=4
 
-    compiler gcc
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+map N Nzz
+map n nzz
 
-    set nobackup
-    set nowb
-    set noswapfile
-" }
+" Make vim silent by disabling annoying error noises.
+set noerrorbells
+set novisualbell
+set t_vb=
 
+if version >= 700
+    set spl=en spell
+    set nospell
+endif
+
+compiler gcc
+
+set nobackup
+set nowb
+set noswapfile
+
+" Map leader to space
+let mapleader = " "
+" Python
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+au BufWrite *.py :Autoformat
+
+
+let python_highlight_all=1
+syntax on
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
